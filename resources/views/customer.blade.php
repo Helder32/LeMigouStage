@@ -1,14 +1,15 @@
-@include('template')
+@include('head')
+<body id="customerBody">
+    
+    <a href="{{ route('home') }}">{{ __('Accueil') }}</a>
 
-<body id="clientBody">
+    <button onclick="document.getElementById('newCustomer').style.display='block'" style="width:auto;">Créer une nouvelle fiche client</button>
+    <button onclick="document.getElementById('searchCustomer').style.display='block'" style="width:auto;">Rechercher une fiche client</button>
 
-    <button onclick="document.getElementById('nouveauClient').style.display='block'" style="width:auto;">Créer une nouvelle fiche client</button>
-    <button onclick="document.getElementById('chercherClient').style.display='block'" style="width:auto;">Rechercher une fiche client</button>
+    <div id="newCustomer" class="modal">
+        <form class="modal-content" action="create" id="newCust">
 
-    <div id="nouveauClient" class="modal">
-        <form class="modal-content" action="/action_page.php">
-
-            <span onclick="document.getElementById('nouveauClient').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <span onclick="document.getElementById('newCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
 
             <div class="container">
                 <h1>Création d'une nouvelle fiche client</h1>
@@ -56,7 +57,7 @@
                 
                 
                 <div class="clearfix">
-                    <button type="button" onclick="document.getElementById('nouveauClient').style.display='none'" class="cancelbtn">Annuler</button>
+                    <button type="button" onclick="document.getElementById('newCustomer').style.display='none'" class="cancelbtn">Annuler</button>
                     <button type="submit" class="signupbtn">Enregistrer</button>
                 </div>
             </div>
@@ -66,8 +67,10 @@
 
 
 
-    <div id="chercherClient" class="modal">
-        <form class="modal-content" action="/action_page.php">
+    <div id="searchCustomer" class="modal-text">
+        <form class="modal-content" action="search" id="searchCust">
+
+        <span onclick="document.getElementById('searchCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
 
             <div class="container">
                 <h1>Recherche d'une fiche client</h1>
@@ -82,7 +85,7 @@
                 <input type="text" placeholder="Raison sociale" name="raison_sociale">
 
                 <div class="clearfix">
-                    <button type="button" onclick="document.getElementById('chercherClient').style.display='none'" class="cancelbtn">Annuler</button>
+                    <button type="button" onclick="document.getElementById('searchCustomer').style.display='none'" class="cancelbtn">Annuler</button>
                     <button type="submit" class="signupbtn">Chercher</button>
                 </div>
             </div>

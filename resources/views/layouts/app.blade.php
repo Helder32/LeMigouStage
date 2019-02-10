@@ -1,4 +1,5 @@
-@include('template')
+@include('head')
+@include('body')
 
 <body>
 

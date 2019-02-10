@@ -11,14 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/client', 'CreatClientController@index')->name('client');
+Route::get('/', 'CustomerController@index')->name('customer');
 
+Route::get('/customer', 'CustomerController@list');
+Route::get('/customer/create', 'CustomerController@create');
+Route::get('/customer/update', 'CustomerController@update');
+Route::get('/customer/delete', 'CustomerController@delete');
 

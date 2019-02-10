@@ -1,34 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app_name', 'MigouLib') }}</title>
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/index.js') }}" defer></script>
-
-        <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-    </head>
-
-
-    <body>
+<body>
 
         <!-- div which contains the backround-image -->
         <div class="bg_accueil">
-
+            
             <!-- content of the sidenav --> 
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -45,7 +19,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Se déconnecter') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -85,15 +59,8 @@
                         </div>
                 </li>
                 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
-                        aria-expande☰="false">Gestion fiches clients</a>
-                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('client') }}">Créer un compte</a>
-                            <a class="dropdown-item" href="#">Chercher un compte</a>
-                        </div>
-                </li>
-                
+                    <a href="{{ route('customer') }}">Gestion fiches clients</a>
+                                        
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
                         aria-expanded="false">Gestion des commandes</a>
@@ -131,10 +98,28 @@
 
 
             <span style="font-size:35px;cursor:pointer" onclick="openNav()">&#9776;
-                <a class="navbar-brand" href="{{ url('/') }}">{{ config('app_name', 'MigouLib') }}</a>
+                <a class="navbar-brand" href="{{ url('/home') }}">{{ config('app_name', 'MigouLib') }}</a>
 
             </span>
+
             
+            <!-- Authentication Links -->
+            @guest
+                <li class="nav-item">
+                    <a class="link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>
+                </li>
+                @if (Route::has('register'))
+                    <!-- code -->
+                @endif
+            @else
+                
+                
+            @endguest
+
+            <main class="py-4">
+                @yield('content')
+            </main>
+        
+        </div>
         
     </body>
-</html>

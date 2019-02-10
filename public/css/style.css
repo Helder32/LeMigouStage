@@ -88,7 +88,7 @@ body, html {
 
 
 #date, #bienvenue, #navbarDropdownBienvenue {
-    color: #7e4d57;
+    color: #94293e;
 }
 
 #connect {
@@ -207,6 +207,10 @@ hr {
     }
 }
 
-#clientBody {
-    background-color: #212529;
+#customerBody {
+    background-color: #08131f;
+}
+
+#newCust, #searchCust {
+    background-color: #bea48e;
 }
