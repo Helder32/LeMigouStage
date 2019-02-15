@@ -22,7 +22,7 @@ class CreateClientsTable extends Migration
             $table->string('numero_rue', 100)->nullable();
             $table->string('rue', 100)->nullable();
             $table->string('ville', 100)->nullable();
-            $table->tinyInteger('code_postal')->nullable();
+            $table->integer('code_postal')->nullable();
             $table->tinyInteger('age')->nullable();
             $table->string('sexe', 100)->nullable();
             $table->string('mail', 100)->nullable()->unique();

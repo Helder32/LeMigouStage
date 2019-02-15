@@ -1,97 +1,139 @@
-@include('head')
-<body id="customerBody">
-    
-    <a href="{{ route('home') }}">{{ __('Accueil') }}</a>
+@extends('template')
 
-    <button onclick="document.getElementById('newCustomer').style.display='block'" style="width:auto;">Créer une nouvelle fiche client</button>
-    <button onclick="document.getElementById('searchCustomer').style.display='block'" style="width:auto;">Rechercher une fiche client</button>
+@section('title')
+    Clients
+@endsection
 
-    <div id="newCustomer" class="modal">
-        <form class="modal-content" action="create" id="newCust">
+@section('content')
 
-            <span onclick="document.getElementById('newCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <body id="customerBody">
+        
+        <button onclick="window.location='{{ URL::route('body') }}'" style="width:auto;">Retour à l'accueil</button>
+        <button onclick="document.getElementById('newCustomer').style.display='block'" style="width:auto;">Créer une nouvelle fiche client</button>
+        <button onclick="document.getElementById('searchCustomer').style.display='block'" style="width:auto;">Rechercher une fiche client</button>
+        <button onclick="window.location='{{ URL::route('resultCustomer') }}'" style="width:auto;">Afficher tous les clients</button>
 
-            <div class="container">
-                <h1>Création d'une nouvelle fiche client</h1>
-                <hr>
-                <label for="Nom"><b>Nom</b></label>
-                <input type="text" placeholder="Nom" name="Nom" required>
+        <div id="newCustomer" class="modal">
+            <form class="modal-content" action="{{url("customer")}}" id="newCust" method="post">
+                {{ csrf_field() }}
 
-                <label for="Prenom"><b>Prénom</b></label>
-                <input type="text" placeholder="Prénom" name="Prenom" required>
+                <span onclick="document.getElementById('newCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
 
-                <label for="raison_sociale"><b>Raison sociale</b></label>
-                <input type="text" placeholder="Raison sociale" name="raison_sociale">
+                <div class="container">
+                    <h1>Création d'une nouvelle fiche client</h1>
+                    <hr>
+                    <label for="Nom"><b>Nom</b></label>
+                    <input type="text" placeholder="Nom" name="Nom" required>
 
-                <label for="Nrue"><b>N° de rue</b></label>
-                <input type="text" placeholder="N° de rue" name="Nrue">
+                    <label for="Prenom"><b>Prénom</b></label>
+                    <input type="text" placeholder="Prénom" name="Prenom" required>
 
-                <label for="rue"><b>Nom de rue</b></label>
-                <input type="text" placeholder="Nom de rue" name="rue">
+                    <label for="raison_sociale"><b>Raison sociale</b></label>
+                    <input type="text" placeholder="Raison sociale" name="raison_sociale">
 
-                <label for="ville"><b>Ville</b></label>
-                <input type="text" placeholder="Ville" name="ville">
+                    <label for="Nrue"><b>N° de rue</b></label>
+                    <input type="text" placeholder="N° de rue" name="Nrue">
 
-                <label for="code_postal"><b>Code postal</b></label>
-                <input type="text" placeholder="Code postal" name="code_postal">
+                    <label for="rue"><b>Nom de rue</b></label>
+                    <input type="text" placeholder="Nom de rue" name="rue">
 
-                <label for="age"><b>Age</b></label>
-                <input type="text" placeholder="Age" name="age">
+                    <label for="ville"><b>Ville</b></label>
+                    <input type="text" placeholder="Ville" name="ville">
 
-                
-                <label for="sexe"><b>Genre</b></label><br>
-                <form>
+                    <label for="code_postal"><b>Code postal</b></label>
+                    <input type="text" placeholder="Code postal" name="code_postal">
+
+                    <label for="age"><b>Age</b></label>
+                    <input type="text" placeholder="Age" name="age">
+
+                    
+                    <label for="sexe"><b>Genre</b></label><br>
                     <input type="radio" name="gender" value="male"> Masculin<br>
                     <input type="radio" name="gender" value="female"> Feminin<br>
-                </form><br>
 
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Email" name="email">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Email" name="email">
 
-                <label for="telFix"><b>Téléphone fixe</b></label>
-                <input type="text" placeholder="Téléphone fixe" name="telFix">
+                    <label for="telFix"><b>Téléphone fixe</b></label>
+                    <input type="text" placeholder="Téléphone fixe" name="telFix">
 
-                <label for="mobile"><b>Téléphone mobile</b></label>
-                <input type="text" placeholder="Téléphone mobile" name="mobile">
+                    <label for="mobile"><b>Téléphone mobile</b></label>
+                    <input type="text" placeholder="Téléphone mobile" name="mobile">
 
-                
-                
-                <div class="clearfix">
-                    <button type="button" onclick="document.getElementById('newCustomer').style.display='none'" class="cancelbtn">Annuler</button>
-                    <button type="submit" class="signupbtn">Enregistrer</button>
+                    
+                    
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('newCustomer').style.display='none'" class="cancelbtn">Annuler</button>
+                        <button type="submit" class="signupbtn" id="addcustomer">Enregistrer</button>
+                    </div>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
 
 
 
-    <div id="searchCustomer" class="modal-text">
-        <form class="modal-content" action="search" id="searchCust">
+        <div id="searchCustomer" class="modal">
+            <form class="modal-content" action="{{url("customer")}}" id="searchCust" method="get">
+                {{ csrf_field() }}
+                <span onclick="document.getElementById('searchCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
 
-        <span onclick="document.getElementById('searchCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <div class="container">
+                    <h1>Recherche d'une fiche client</h1>
+                    <hr>
+                    <label for="Nom"><b>Nom</b></label>
+                    <input type="text" placeholder="Nom" name="SearchNom">
 
-            <div class="container">
-                <h1>Recherche d'une fiche client</h1>
-                <hr>
-                <label for="Nom"><b>Nom</b></label>
-                <input type="text" placeholder="Nom" name="Nom">
+                    <label for="Prenom"><b>Prénom</b></label>
+                    <input type="text" placeholder="Prénom" name="SearchPrenom">
 
-                <label for="Prenom"><b>Prénom</b></label>
-                <input type="text" placeholder="Prénom" name="Prenom">
+                    <label for="raison_sociale"><b>Raison sociale</b></label>
+                    <input type="text" placeholder="Raison sociale" name="SearchRaisonSociale">
 
-                <label for="raison_sociale"><b>Raison sociale</b></label>
-                <input type="text" placeholder="Raison sociale" name="raison_sociale">
-
-                <div class="clearfix">
-                    <button type="button" onclick="document.getElementById('searchCustomer').style.display='none'" class="cancelbtn">Annuler</button>
-                    <button type="submit" class="signupbtn">Chercher</button>
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('searchCustomer').style.display='none'" class="cancelbtn">Annuler</button>
+                        <button type="submit" onclick="document.getElementById('resultCustomer').style.display='block'" class="signupbtn">Chercher</button>
+                    </div>
                 </div>
+            </form>
+        </div>
+
+
+        {{-- <div id="resultCustomer" class="modal">
+            <form class="modal-content" action="{{url("customer")}}" id="resultCust" method="get">
+                {{ csrf_field() }}
+                <span onclick="document.getElementById('resultCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                <div class="container">
+                    <h1>Resultat de votre recherche</h1>
+                    <hr>
+                    
+                </div>
+            </form>
+        </div> --}}
+
+        {{-- code pour afficher les messages d'erreur --}}
+
+        @if(count($errors) > 0)
+
+            @foreach($errors->all() as $error)
+                <div class="alert alert-danger">
+                    {{$error}}
+                </div>
+            @endforeach
+        @endif
+        
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{session('success')}}
             </div>
-        </form>
-    </div>
+        @endif
+        
+        @if(session('success'))
+            <div class="alert alert-error">
+                {{session('error')}}
+            </div>
+        @endif 
+    </body>
 
-
-    
-</body>
+@endsection

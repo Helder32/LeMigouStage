@@ -87,11 +87,7 @@ body, html {
 }
 
 
-#date, #bienvenue, #navbarDropdownBienvenue {
-    color: #94293e;
-}
-
-#connect {
+#content, #date, #bienvenue, #navbarDropdownBienvenue {
     color: darkred;
 }
 
@@ -208,9 +204,91 @@ hr {
 }
 
 #customerBody {
+    /* The image used */
+    background-image: url("../svg/annie-spratt-1132854-unsplash.jpg");
+
+    /* Full height */
+    height: 100%;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: #08131f;
 }
+
 
 #newCust, #searchCust {
     background-color: #bea48e;
 }
+
+.link {
+    color: rgb(156, 8, 38);
+    font-size: 70%;
+}
+
+
+#connectBody {
+    /* The image used */
+    background-image: url("../svg/mahdiar-mahmoodi-573573-unsplash.jpg");
+
+    /* Full height */
+    height: 100%;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#titlePage {
+    font-size: 70px;
+    font-weight: bold;
+    color: #fcdfb9;
+}
+
+#tableResult, #title_table {
+    text-align: center;
+}
+
+.tr-color-selected{
+    background-color: hsla(196, 77%, 55%, 0.3) !important;
+    transition: all .2s ease-in;
+    }
+
+
+
+    #searchCust {
+        background-image: url('../css/searchicon.png'); /* Add a search icon to input */
+        background-position: 10px 12px; /* Position the search icon */
+        background-repeat: no-repeat; /* Do not repeat the icon image */
+        width: 100%; /* Full-width */
+        font-size: 16px; /* Increase font-size */
+        padding: 12px 20px 12px 40px; /* Add some padding */
+        border: 1px solid rgb(56, 56, 56); /* Add a grey border */
+        margin-bottom: 12px; /* Add some space below the input */
+    }
+    
+    #customerTable {
+        border-collapse: collapse; /* Collapse borders */
+        width: 100%; /* Full-width */
+        border: 1px solid rgb(136, 132, 160); /* Add a grey border */
+        font-size: 18px; /* Increase font-size */
+    }
+    
+    #customerTable th, #customerTable td {
+        text-align: left; /* Left-align text */
+        padding: 12px; /* Add padding */
+    }
+    
+    #customerTable tr {
+        /* Add a bottom border to all table rows */
+        border-bottom: 1px solid rgb(139, 136, 136);
+    }
+    
+    #customerTable tr.header, #customerTable tr:hover {
+        /* Add a grey background color to the table header and on hover */
+        background-color: #d48bff;
+    }

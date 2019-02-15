@@ -1,9 +1,12 @@
-@include('head')
-@include('body')
+@extends('template')
 
-<body>
+@section('title')
+    Connexion
+@endsection
 
-    <!-- Authentication code -->
+@section('content')
+
+    {{-- <!-- Authentication code -->
     <div id="app">
         <!-- Authentication Links -->
         @guest
@@ -21,8 +24,6 @@
 
     <main class="py-4">
         @yield('content')
-    </main>
+    </main> --}}
 
-
-
-</body>
+@endsection
