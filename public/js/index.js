@@ -15,6 +15,7 @@ function closeLogin() {
 
 // SideNav Button Initialization
 $(".button-collapse").sideNav();
+
 // SideNav Scrollbar Initialization
 var sideNavScrollbar = document.querySelector('.custom-scrollbar');
 Ps.initialize(sideNavScrollbar);
@@ -34,7 +35,7 @@ function showPassword() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Get the modal for the customer view
+// Get the modal for the customer view or article view
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
@@ -46,7 +47,7 @@ window.onclick = function(event) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Get the all customers
+// Get the all customers or article
 $(document).ready(function () {
     $('#dtBasicExample').DataTable();
     $('.dataTables_length').addClass('bs-select');
@@ -55,7 +56,7 @@ $(document).ready(function () {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////bin
 
-
+    // code js for the customers search
     function searchCustomer() {
         // Declare variables
         var input, filter, table, tr, td, i, txtValue;
@@ -78,3 +79,7 @@ $(document).ready(function () {
                 }
         }
     }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

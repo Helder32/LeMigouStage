@@ -72,7 +72,8 @@
                 </div>
         </li>
         
-            <a href="{{ route('customer') }}">{{ __('Gestion fiches clients') }}</a>
+            <a href="{{ route('customer') }}">{{ __('Gestion des fiches clients') }}</a>
+            <a href="{{ route('article') }}">{{ __('Gestion des articles') }}</a>
                                 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 

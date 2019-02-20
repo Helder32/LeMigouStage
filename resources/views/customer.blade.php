@@ -10,8 +10,8 @@
         
         <button onclick="window.location='{{ URL::route('body') }}'" style="width:auto;">Retour à l'accueil</button>
         <button onclick="document.getElementById('newCustomer').style.display='block'" style="width:auto;">Créer une nouvelle fiche client</button>
-        <button onclick="document.getElementById('searchCustomer').style.display='block'" style="width:auto;">Rechercher une fiche client</button>
-        <button onclick="window.location='{{ URL::route('resultCustomer') }}'" style="width:auto;">Afficher tous les clients</button>
+        {{-- <button onclick="document.getElementById('searchCustomer').style.display='block'" style="width:auto;">Rechercher une fiche client</button> --}}
+        <button onclick="window.location='{{ URL::route('resultCustomer') }}'" style="width:auto;">Afficher ou rechercher les clients</button>
 
         <div id="newCustomer" class="modal">
             <form class="modal-content" action="{{url("customer")}}" id="newCust" method="post">
@@ -46,7 +46,6 @@
                     <label for="age"><b>Age</b></label>
                     <input type="text" placeholder="Age" name="age">
 
-                    
                     <label for="sexe"><b>Genre</b></label><br>
                     <input type="radio" name="gender" value="male"> Masculin<br>
                     <input type="radio" name="gender" value="female"> Feminin<br>
@@ -73,7 +72,7 @@
 
 
 
-        <div id="searchCustomer" class="modal">
+        {{-- <div id="searchCustomer" class="modal">
             <form class="modal-content" action="{{url("customer")}}" id="searchCust" method="get">
                 {{ csrf_field() }}
                 <span onclick="document.getElementById('searchCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -96,21 +95,10 @@
                     </div>
                 </div>
             </form>
-        </div>
-
-
-        {{-- <div id="resultCustomer" class="modal">
-            <form class="modal-content" action="{{url("customer")}}" id="resultCust" method="get">
-                {{ csrf_field() }}
-                <span onclick="document.getElementById('resultCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-                <div class="container">
-                    <h1>Resultat de votre recherche</h1>
-                    <hr>
-                    
-                </div>
-            </form>
         </div> --}}
+
+
+        
 
         {{-- code pour afficher les messages d'erreur --}}
 

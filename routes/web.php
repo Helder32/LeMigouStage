@@ -17,7 +17,9 @@
 
 Auth::routes();
 
+
 Route::get('/', 'BodyController@index')->name('body');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -29,4 +31,14 @@ Route::get('/customer/show', 'CustomerController@show')->name('resultCustomer');
 Route::get('/customer/edit', 'CustomerController@edit');
 Route::get('/customer/update', 'CustomerController@update');
 Route::get('/customer/destroy', 'CustomerController@destroy');
-Route::get('Customer', 'CustomerController@result');
+
+
+Route::get('/article', 'ArticleController@index')->name('article');
+Route::get('/article/create', 'ArticleController@create')->name('article.create');
+Route::post('article', 'ArticleController@store');
+Route::get('/article/show', 'ArticleController@show')->name('resultArticle');
+Route::get('/article/edit', 'ArticleController@edit');
+Route::get('/article/update', 'ArticleController@update');
+Route::get('/article/destroy', 'ArticleController@destroy');
+
+

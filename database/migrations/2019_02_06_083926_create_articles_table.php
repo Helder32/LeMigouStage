@@ -17,8 +17,8 @@ class CreateArticlesTable extends Migration
             $table->increments('id_article');
             $table->timestamps();
             $table->string('nom', 100)->nullable();
-            $table->float('tome_livre')->nullable();
-            $table->integer('isbn')->nullable()->unique();
+            $table->string('tome_livre')->nullable();
+            $table->string('isbn')->nullable()->unique();
             $table->date('date_parution')->nullable();
             $table->string('auteur', 100)->nullable();
             $table->string('editeur', 100)->nullable();
@@ -26,15 +26,15 @@ class CreateArticlesTable extends Migration
             $table->string('diffuseur', 100)->nullable();
             $table->string('secteur_livre', 100)->nullable();
             $table->string('rayon_livre', 100)->nullable();
-            $table->float('bon_achat')->nullable();
+            $table->string('bon_achat')->nullable();
             $table->string('repas', 100)->nullable();
             $table->string('boisson', 100)->nullable();
             $table->string('dessert_divers', 100)->nullable();
-            $table->float('prix_achat')->nullable();
-            $table->float('remise_achat')->nullable();
-            $table->float('taux_tva');
-            $table->float('prix_ht');
-            $table->float('prix_ttc');
+            $table->string('prix_achat')->nullable();
+            $table->string('remise_achat')->nullable();
+            $table->string('taux_tva');
+            $table->string('prix_ht');
+            $table->string('prix_ttc');
             $table->string('secteur_bd', 100)->nullable()->default(false);
             $table->string('secteur_jeunesse', 100)->nullable()->default(false);
             $table->string('secteur_roman', 100)->nullable()->default(false);
@@ -54,7 +54,7 @@ class CreateArticlesTable extends Migration
             $table->integer('qt_depot')->nullable();
             $table->integer('qt_reservation')->nullable();
             $table->integer('qt_commande_fournisseur')->nullable();
-            $table->integer('valeur_total_stock');
+            $table->integer('valeur_total_stock')->nullable();
             
         });
     }
