@@ -41,4 +41,3 @@ Route::get('/article/edit', 'ArticleController@edit');
 Route::get('/article/update', 'ArticleController@update');
 Route::get('/article/destroy', 'ArticleController@destroy');
 
-
