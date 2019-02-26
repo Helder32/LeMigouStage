@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-Résultat
+    Résultat
 @endsection
 
 @section('content')
@@ -9,7 +9,14 @@ Résultat
 
 <body id="resultArticleBody">
     
-    <button onclick="window.location='{{ URL::route('body') }}'" style="width:auto;">Retour à l'accueil</button>
+        <div>
+            @include('sideNav')
+
+            <!-- Pour revenir à la page précedente -->
+            <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
+            
+        </div>
+
     <div>
         <h4 id="title_table">Vos articles </h4>
     </div>
@@ -21,7 +28,7 @@ Résultat
         <input type="text" id="searchArt" onkeyup="searchArticle()" placeholder="Nom de l'article" onfocus="this.value=''">
             
             <thead>
-                <tr>
+                <tr id="trTable">
                     <th class="th-sm">id.</th>
                     <th class="th-sm">Date de création</th>
                     <th class="th-sm">Nom</th>
@@ -92,14 +99,14 @@ Résultat
                 @endforeach
                 
                 @else
-                <p id='alertArt'>Vous n'avez pas d'articles enregistrés</p>
+                    <p id='alertArt'>Vous n'avez pas d'articles enregistrés</p>
                 @endif 
                 
+            
             </tbody>
         </table> 
     </div>
         
-
 
     
 </body>

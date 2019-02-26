@@ -41,3 +41,7 @@ Route::get('/article/edit', 'ArticleController@edit');
 Route::get('/article/update', 'ArticleController@update');
 Route::get('/article/destroy', 'ArticleController@destroy');
 
+
+Route::get('/venteLib', 'venteLibController@index')->name('venteLib');
+Route::get('/venteRest', 'venteRestController@index')->name('venteRest');
+

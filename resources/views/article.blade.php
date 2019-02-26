@@ -7,13 +7,19 @@
 @section('content')
 
     <body id="articleBody">
-        
-        <button onclick="window.location='{{ URL::route('body') }}'" style="width:auto;">Retour à l'accueil</button>
-        <button onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche article</button>
-        {{-- <button onclick="document.getElementById('searchArticle').style.display='block'" style="width:auto;">Rechercher une fiche article</button> --}}
-        <button onclick="window.location='{{ URL::route('resultArticle') }}'" style="width:auto;">Afficher ou Rechercher les articles</button>
 
-
+        <div class="card" id="cardHeader">
+            <div class="card-header h1">
+                @include('sideNav')
+                
+                <!-- Pour revenir à la page précedente -->
+                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
+                
+                <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche article</button>
+                <button class="btn btn-light" onclick="window.location='{{ URL::route('resultArticle') }}'" style="width:auto;">Afficher ou Rechercher les articles</button>
+            </div>
+        </div>
+    
         <div id="newArticle" class="modal">
                 <form class="modal-content" action="{{url("article")}}" id="newArt" method="post">
                     {{ csrf_field() }}
@@ -114,6 +120,12 @@
                             </div>
                     </div>
                 </form>
+            </div>
+
+            <div class="fixed-action-btn smooth-scroll" style="bottom: 45px; right: 24px;">
+                <a href="#top-section" class="btn-floating btn-large red">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
             </div>
 
             {{-- code pour afficher les messages d'erreur  --}}

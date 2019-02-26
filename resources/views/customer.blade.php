@@ -7,11 +7,18 @@
 @section('content')
 
     <body id="customerBody">
-        
-        <button onclick="window.location='{{ URL::route('body') }}'" style="width:auto;">Retour à l'accueil</button>
-        <button onclick="document.getElementById('newCustomer').style.display='block'" style="width:auto;">Créer une nouvelle fiche client</button>
-        {{-- <button onclick="document.getElementById('searchCustomer').style.display='block'" style="width:auto;">Rechercher une fiche client</button> --}}
-        <button onclick="window.location='{{ URL::route('resultCustomer') }}'" style="width:auto;">Afficher ou rechercher les clients</button>
+
+        <div class="card" id="cardHeader">
+            <div class="card-header h1">
+                @include('sideNav')
+
+                <!-- Pour revenir à la page précedente -->
+                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
+                
+                <button class="btn btn-light" onclick="document.getElementById('newCustomer').style.display='block'" style="width:auto;">Créer une nouvelle fiche client</button>
+                <button class="btn btn-light" onclick="window.location='{{ URL::route('resultCustomer') }}'" style="width:auto;">Afficher ou rechercher les clients</button>
+            </div>
+        </div>
 
         <div id="newCustomer" class="modal">
             <form class="modal-content" action="{{url("customer")}}" id="newCust" method="post">

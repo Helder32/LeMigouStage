@@ -8,8 +8,15 @@ Résultat
 
 
 <body id="resultCustomerBody">
+
+    <div>
+        @include('sideNav')
+
+        <!-- Pour revenir à la page précedente -->
+        <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
+        
+    </div>
     
-    <button onclick="window.location='{{ URL::route('body') }}'" style="width:auto;">Retour à l'accueil</button>
     <div>
         <h4 id="title_table">Vos clients </h4>
     </div>
