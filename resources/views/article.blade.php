@@ -15,19 +15,22 @@
                 <!-- Pour revenir à la page précedente -->
                 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
                 
-                <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche article</button>
+                <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche Librairie</button>
+                <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche Restauration</button>
                 <button class="btn btn-light" onclick="window.location='{{ URL::route('resultArticle') }}'" style="width:auto;">Afficher ou Rechercher les articles</button>
+            
             </div>
+
         </div>
     
-        <div id="newArticle" class="modal">
-                <form class="modal-content" action="{{url("article")}}" id="newArt" method="post">
+            <div id="newArticle" class="modal">
+                <form class="modal-content col-sm-7" action="{{url("article")}}" id="newArt" method="post">
                     {{ csrf_field() }}
 
                     <span onclick="document.getElementById('newArticle').style.display='none'" class="close" title="Close Modal">&times;</span>
 
                     <div class="container">
-                        <h1>Création d'une nouvelle fiche article</h1>
+                        <h1>Création d'une nouvelle fiche Librairie</h1>
                         <hr>
                         <label for="Nom"><b>Nom</b></label>
                         <input type="text" placeholder="Nom" name="Nom">
@@ -122,11 +125,11 @@
                 </form>
             </div>
 
-            <div class="fixed-action-btn smooth-scroll" style="bottom: 45px; right: 24px;">
+            {{-- <div class="fixed-action-btn smooth-scroll" style="bottom: 45px; right: 24px;">
                 <a href="#top-section" class="btn-floating btn-large red">
                     <i class="fas fa-arrow-up"></i>
                 </a>
-            </div>
+            </div> --}}
 
             {{-- code pour afficher les messages d'erreur  --}}
     
@@ -150,6 +153,14 @@
                     {{session('error')}}
                 </div>
             @endif  --}}
+
+            <!-- Footer --> 
+        <footer class="page-footer font-small special-color-dark pt-4" id="footerClients" >
+    
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright: * HelDev *</div>
+            
+        </footer>
     </body>
 
 @endsection

@@ -10,24 +10,21 @@
 <!-- div which contains the backround-image -->
 <div class="bg_accueil">
     
-    @include('sideNav')
-    
-        <!-- Pour revenir à la page précedente -->
-        <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
-    
+    <div>
+        @include('sideNav')
+        
         <!-- Authentication Links -->
         @guest
         
-            <a id="connectBtn" class="link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>
+        <a id="connectBtn" class="link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>
         
-            @if (Route::has('register'))
-
+        @if (Route::has('register'))
         
-            @endif
-            @else
-        
+        @endif
+        @else
         
         @endguest
+    </div>
         
         <main class="py-4">
             @yield('content')
@@ -42,17 +39,16 @@
             <div class="ruban_gauche"></div>
             <div class="ruban_droit"></div>
         </div> --}}
-</div>
-
-
-    <!-- Footer --> 
-    <footer class="page-footer font-small special-color-dark pt-4">
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2019 Copyright: * HelDev *</div>
         
-    </footer>
-
+        
+        <!-- Footer --> 
+        <footer class="page-footer font-small special-color-dark pt-4" id="footer" >
+    
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright: * HelDev *</div>
+            
+        </footer>
+    </div>
         
 
 @endsection

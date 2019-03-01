@@ -24,6 +24,7 @@ class CreateAchatsTable extends Migration
             $table->boolean('statut_paiement')->nullable()->default(false);
             $table->date('date_jour');
             $table->integer('id_client')->unsigned()->index();
+            $table->integer('id_article')->unsigned()->index();
         });
     }
 

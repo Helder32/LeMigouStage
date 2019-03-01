@@ -10,18 +10,20 @@
 
         <div class="card" id="cardHeader">
             <div class="card-header h1">
-                @include('sideNav')
-
-                <!-- Pour revenir à la page précedente -->
-                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
-                
-                <button class="btn btn-light" onclick="document.getElementById('newCustomer').style.display='block'" style="width:auto;">Créer une nouvelle fiche client</button>
-                <button class="btn btn-light" onclick="window.location='{{ URL::route('resultCustomer') }}'" style="width:auto;">Afficher ou rechercher les clients</button>
+                    <div>
+                        @include('sideNav')
+                        
+                        <!-- Pour revenir à la page précedente -->
+                        <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
+                        
+                        <button class="btn btn-light" onclick="document.getElementById('newCustomer').style.display='block'" style="width:auto;">Créer une nouvelle fiche client</button>
+                        <button class="btn btn-light" onclick="window.location='{{ URL::route('resultCustomer') }}'" style="width:auto;">Afficher ou rechercher les clients</button>
+                    </div>
             </div>
         </div>
 
         <div id="newCustomer" class="modal">
-            <form class="modal-content" action="{{url("customer")}}" id="newCust" method="post">
+            <form class="modal-content col-sm-7" action="{{url("customer")}}" id="newCust" method="post">
                 {{ csrf_field() }}
 
                 <span onclick="document.getElementById('newCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -129,6 +131,14 @@
                 {{session('error')}}
             </div>
         @endif 
+
+        <!-- Footer --> 
+        <footer class="page-footer font-small special-color-dark pt-4" id="footerClients" >
+    
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright: * HelDev *</div>
+            
+        </footer>
     </body>
 
 @endsection

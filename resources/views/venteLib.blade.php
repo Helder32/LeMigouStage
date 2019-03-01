@@ -8,11 +8,13 @@
 
 <body >
     <div class="bg_venteLib">
+        <div>
         @include('sideNav')
-
+        
         <!-- Pour revenir à la page précedente -->
         <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
-                
+    </div>
+        
         <div id="fond"> 
             <div class="ruban">     
                 <h2>Vente Librairie</h2>     
@@ -28,16 +30,15 @@
                 <button class="btn btn-light" id="ChoixCaisse" href="" style="width:auto;">Facture différée</button>
                 <button class="btn btn-light" id="ChoixCaisse" href="" style="width:auto;">Devis</button>
         </div>
+        
+        <!-- Footer --> 
+        <footer class="page-footer font-small special-color-dark pt-4" id="footer" >
             
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright: * HelDev *</div>
+        </footer>
+
     </div>
-    
-    <!-- Footer --> 
-    <footer class="page-footer font-small special-color-dark pt-4">
-        
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2019 Copyright: * HelDev *</div>
-        
-    </footer>
     
 </body>
 

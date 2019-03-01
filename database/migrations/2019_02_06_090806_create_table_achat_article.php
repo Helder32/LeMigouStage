@@ -19,7 +19,7 @@ class CreateTableAchatArticle extends Migration
                 $table->integer('fk_achat')->unsigned()->index();
                 $table->foreign('fk_achat')->references('id_achat')->on('achats')->ondelete();
                 $table->integer('fk_article')->unsigned()->index();
-                $table->foreign('fk_article')->references('id_article')->on('articles')->ondelete();
+                $table->foreign('fk_article')->references('id')->on('articles')->ondelete();
                 $table->integer('quantite');
                 $table->integer('remise_forfaitaire')->nullable();   
             });

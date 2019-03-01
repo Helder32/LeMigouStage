@@ -44,4 +44,6 @@ Route::get('/article/destroy', 'ArticleController@destroy');
 
 Route::get('/venteLib', 'venteLibController@index')->name('venteLib');
 Route::get('/venteRest', 'venteRestController@index')->name('venteRest');
+Route::post('/venteRest', 'venteRestController@store');
+
 
