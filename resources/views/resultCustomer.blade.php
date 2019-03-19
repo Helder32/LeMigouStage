@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-Résultat
+Vos clients
 @endsection
 
 @section('content')
