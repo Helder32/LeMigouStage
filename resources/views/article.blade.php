@@ -13,7 +13,7 @@
                 @include('sideNav')
                 
                 <!-- Pour revenir à la page précedente -->
-                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
+                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour en arrière</a> 
                 
                 <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche Librairie</button>
                 <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche Restauration</button>
