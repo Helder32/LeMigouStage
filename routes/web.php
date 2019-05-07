@@ -20,7 +20,6 @@ Auth::routes();
 
 Route::get('/', 'BodyController@index')->name('body');
 
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 

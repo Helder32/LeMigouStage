@@ -25,7 +25,7 @@ Vos clients
         {{-- <table class="table table-sm table-dark table-striped" id="customerTable" cellspacing="0" width="90%"> --}}
         <table id="customerTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <label for="searchCust">Rechercher un client par son nom :</label>
-        <input type="text" id="searchCust" onkeyup="searchCustomer()" placeholder="Nom du client" onfocus="this.value=''">
+        <input type="text" id="searchCust" name="searchCustom" onkeyup="searchCustomer()" placeholder="Nom du client" onfocus="this.value=''">
             
             <thead>
                 <tr>
