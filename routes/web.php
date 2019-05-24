@@ -36,9 +36,9 @@ Route::get('/article', 'ArticleController@index')->name('article');
 Route::get('/article/create', 'ArticleController@create')->name('article.create');
 Route::post('article', 'ArticleController@store');
 Route::get('/article/show', 'ArticleController@show')->name('resultArticle');
-Route::get('/article/edit', 'ArticleController@edit');
-Route::get('/article/update', 'ArticleController@update');
-Route::get('/article/destroy', 'ArticleController@destroy');
+Route::get('/article/edit/{id}', 'ArticleController@edit')->name('article.edit');
+Route::get('/article/update', 'ArticleController@update')->name('article.update');
+Route::get('/article/destroy', 'ArticleController@destroy')->name('article.destroy');
 
 
 Route::get('/venteLib', 'venteLibController@index')->name('venteLib');

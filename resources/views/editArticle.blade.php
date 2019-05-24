@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <body id="articleBody">
+    <body>
 
         <div class="card" id="cardHeader">
             <div class="card-header h1">
@@ -14,47 +14,42 @@
                 
                 <!-- Pour revenir à la page précedente -->
                 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
-                
-                <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche Librairie</button>
-                <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche Restauration</button>
-                <button class="btn btn-light" onclick="window.location='{{ URL::route('resultArticle') }}'" style="width:auto;">Afficher ou Rechercher les articles</button>
-            
             </div>
 
         </div>
     
-            <div id="newArticle" class="modal">
+            <div>
                 <form class="modal-content col-sm-7" action="{{url("article")}}" id="newArt" method="post">
                     {{ csrf_field() }}
 
                     <span onclick="document.getElementById('newArticle').style.display='none'" class="close" title="Close Modal">&times;</span>
 
                     <div class="container">
-                        <h1>Création d'une nouvelle fiche Librairie</h1>
+                        <h1>Modifier une fiche article</h1>
                         <hr>
                         <label for="Nom"><b>Nom</b></label>
-                        <input type="text" placeholder="Nom" name="Nom">
+                        <input type="text" placeholder="Nom" name="Nom" value="{{$article->nom}}">
 
                         <label for="tome_livre"><b>Tome du livre</b></label>
-                        <input type="text" placeholder="Tome du livre" name="tome_livre">
+                        <input type="text" placeholder="Tome du livre" name="tome_livre" value="{{$article->tome_livre}}">
 
                         <label for="isbn"><b>ISBN</b></label>
-                        <input type="text" placeholder="ISBN" name="isbn">
+                        <input type="text" placeholder="ISBN" name="isbn" value="{{$article->isbn}}">
 
                         <label for="date_parution"><b>Date de parution : </b></label>
-                        <input type="date" placeholder="Date de parution" name="date_parution"><br>
+                        <input type="date" placeholder="Date de parution" name="date_parution" value="{{$article->date_parution}}"><br>
 
                         <label for="auteur"><b>Nom de l'auteur</b></label>
-                        <input type="text" placeholder="Nom de l'auteur" name="auteur">
+                        <input type="text" placeholder="Nom de l'auteur" name="auteur" value="{{$article->auteur}}">
 
                         <label for="editeur"><b>Éditeur</b></label>
-                        <input type="text" placeholder="Éditeur" name="editeur">
+                        <input type="text" placeholder="Éditeur" name="editeur" value="{{$article->editeur}}">
 
                         <label for="distributeur"><b>Distributeur</b></label>
-                        <input type="text" placeholder="Distributeur" name="distributeur">
+                        <input type="text" placeholder="Distributeur" name="distributeur" value="{{$article->distributeur}}">
 
                         <label for="diffuseur"><b>Diffuseur</b></label>
-                        <input type="text" placeholder="Diffuseur" name="diffuseur">
+                        <input type="text" placeholder="Diffuseur" name="diffuseur" value="{{$article->diffuseur}}">
 
                         <label for="secteur_livre"><b>Secteur</b></label><br>
                         <input type="radio" name="secteur" value="BD">BD<br>
@@ -75,46 +70,46 @@
                         <input type="radio" name="cat" value="divers">Divers<br>
 
                         <label for="bon_achat"><b>Bon d'achat</b></label>
-                        <input type="text" placeholder="Bon d'achat" name="bon_achat">
+                        <input type="text" placeholder="Bon d'achat" name="bon_achat" value="{{$article->bon_achat}}">
 
                         <label for="repas"><b>Repas</b></label>
-                        <input type="text" placeholder="Repas" name="repas">
+                        <input type="text" placeholder="Repas" name="repas" value="{{$article->repas}}">
 
                         <label for="boisson"><b>Boisson</b></label>
-                        <input type="text" placeholder="Boisson" name="boisson">
+                        <input type="text" placeholder="Boisson" name="boisson" value="{{$article->boisson}}">
 
                         <label for="dessert_divers"><b>Desserts et divers</b></label>
-                        <input type="text" placeholder="Desserts et divers" name="dessert_divers">
+                        <input type="text" placeholder="Desserts et divers" name="dessert_divers" value="{{$article->dessert_divers}}">
 
                         <label for="prix_achat"><b>Prix d'achat</b></label>
-                        <input type="text" placeholder="Prix d'achat" name="prix_achat">
+                        <input type="text" placeholder="Prix d'achat" name="prix_achat" value="{{$article->prix_achat}}">
 
                         <label for="remise_achat"><b>Remise d'achat</b></label>
-                        <input type="text" placeholder="Remise d'achat" name="remise_achat">
+                        <input type="text" placeholder="Remise d'achat" name="remise_achat" value="{{$article->remise_achat}}">
 
                         <label for="taux_tva"><b>Taux TVA</b></label>
-                        <input type="text" placeholder="Taux TVA" name="taux_tva" required>
+                        <input type="text" placeholder="Taux TVA" name="taux_tva" required  value="{{$article->taux_tva}}">
 
                         <label for="prix_ht"><b>Prix HT</b></label>
-                        <input type="text" placeholder="Prix HT" name="prix_ht" required>
+                        <input type="text" placeholder="Prix HT" name="prix_ht" required value="{{$article->prix_ht}}">
 
                         <label for="prix_ttc"><b>Prix TTC</b></label>
-                        <input type="text" placeholder="Prix TTC" name="prix_ttc" required>
+                        <input type="text" placeholder="Prix TTC" name="prix_ttc" required value="{{$article->prix_ttc}}">
 
                         <label for="qt_dispo_fournisseur"><b>Quantitée disponnible fournisseur</b></label>
-                        <input type="text" placeholder="Quantitée disponnible fournisseur" name="qt_dispo_fournisseur">
+                        <input type="text" placeholder="Quantitée disponnible fournisseur" name="qt_dispo_fournisseur" value="{{$article->qt_dispo_fournisseur}}">
 
                         <label for="qt_stock"><b>Quantitée stock</b></label>
-                        <input type="text" placeholder="Quabtitée stock" name="qt_stock">
+                        <input type="text" placeholder="Quantitée stock" name="qt_stock" value="{{$article->qt_stock}}">
 
                         <label for="qt_depot"><b>Quantitée en dépôt</b></label>
-                        <input type="text" placeholder="Quantitée en dépôt" name="qt_depot">
+                        <input type="text" placeholder="Quantitée en dépôt" name="qt_depot" value="{{$article->qt_depot}}">
 
                         <label for="qt_reservation"><b>Quantitée en réservation</b></label>
-                        <input type="text" placeholder="Quantitée en réservation" name="qt_reservation">
+                        <input type="text" placeholder="Quantitée en réservation" name="qt_reservation" value="{{$article->qt_reservation}}">
 
                         <label for="qt_commande_fournisseur"><b>Quantitée en commande fournisseur</b></label>
-                        <input type="text" placeholder="Quantitée en commande fournisseur" name="qt_commande_fournisseur">
+                        <input type="text" placeholder="Quantitée en commande fournisseur" name="qt_commande_fournisseur" value="{{$article->qt_commande_fournisseur}}">
 
                         
                             <div class="clearfix">
@@ -125,50 +120,6 @@
                 </form>
             </div>
 
-
-            {{-- code pour afficher les messages de success --}}
-            {{-- <div class="col-sm-12">
-
-                @if(session()->get('success'))
-                    <div class="alert alert-success">
-                        {{ session()->get('success') }}  
-                    </div>
-                @endif
-            </div> --}}
-
-
-            
-            
-            {{-- code pour afficher les messages d'erreur  --}}
-    
-            {{-- @if(count($errors) > 0)
-
-                @foreach($errors->all() as $error)
-                    <div class="alert alert-danger">
-                        {{$error}}
-                    </div>
-                @endforeach
-            @endif
-            
-            @if(session('success'))
-                <div class="alert alert-success">
-                    {{session('success')}}
-                </div>
-            @endif
-            
-            @if(session('success'))
-                <div class="alert alert-error">
-                    {{session('error')}}
-                </div>
-            @endif  --}}
-
-            <!-- Footer --> 
-        <footer class="page-footer font-small special-color-dark pt-4" id="footerClients" >
-    
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2019 Copyright: * HelDev *</div>
-            
-        </footer>
     </body>
 
 @endsection

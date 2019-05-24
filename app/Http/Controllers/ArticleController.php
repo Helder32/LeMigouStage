@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\article;
 
+
 class ArticleController extends Controller
 {
     // if (isset($_POST["addArticle"]))
     // { 
     //     $this->store();
     // }
+
     /**
      * Display a listing of the resource.
      *
@@ -24,6 +26,8 @@ class ArticleController extends Controller
 
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -33,6 +37,8 @@ class ArticleController extends Controller
     {
         return view('article');
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -71,9 +77,11 @@ class ArticleController extends Controller
         $article->save();
             
             
-        return redirect('article')->with(['success', 'Votre demande a bien été enregistrée']);
+        return redirect('article')->with('success', 'Votre demande a bien été enregistrée');
         
     }
+
+
 
     /**
      * Display the specified resource.
@@ -84,8 +92,12 @@ class ArticleController extends Controller
     public function show()
     {
         $article = article::all();
+        // dump($article);
+
         return view('resultArticle')->with('article', $article);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -95,8 +107,17 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        //$article = article::all();
+        //$article->find($id);
+        $article = article::where('id_article', $id)->first();
+        
+        //dump($request::get('nom'));
+        //dump($article->nom);
+        
+        return view('editArticle', compact('article'));   
     }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -110,6 +131,8 @@ class ArticleController extends Controller
         //
     }
 
+
+
     /**
      * Remove the specified resource from storage.
      *
@@ -118,6 +141,9 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = article::find($id);
+        $article->delete();
+
+        return redirect('resultArticle')->with('succes', 'Article supprimé');
     }
 }

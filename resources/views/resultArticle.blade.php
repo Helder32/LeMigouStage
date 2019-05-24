@@ -54,8 +54,6 @@
                     <th class="th-sm">Qt en dépôt</th>
                     <th class="th-sm">Qt en réservation</th>
                     <th class="th-sm">Qt en commande fournisseur</th>
-                    
-                    
                 </tr>
             </thead>
             
@@ -94,6 +92,18 @@
                     <td> {{ $article->qt_reservation }} </td>
                     <td> {{ $article->qt_commande_fournisseur }} </td>
                     
+                    <td>
+                        <a href="{{ route('article.edit', [$article->id_article])}}" class="btn btn-primary">Éditer</a>
+                    </td>
+
+                    <td>
+                        <form action="{{ route('article.destroy', [$article->id])}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Supprimer</button>
+                        </form>
+                    </td>
+
                 </tr>
                 
                 @endforeach
