@@ -92,7 +92,6 @@ class ArticleController extends Controller
     public function show()
     {
         $article = article::all();
-        // dump($article);
 
         return view('resultArticle')->with('article', $article);
     }
@@ -111,9 +110,6 @@ class ArticleController extends Controller
         //$article->find($id);
         $article = article::where('id_article', $id)->first();
         
-        //dump($request::get('nom'));
-        //dump($article->nom);
-        
         return view('editArticle', compact('article'));   
     }
 
@@ -128,7 +124,36 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $article = article::find($id);
+        $article->nom = $request->input('Nom');
+        $article->tome_livre = $request->input('tome_livre');
+        $article->isbn = $request->input('isbn');
+        $article->date_parution = $request->input('date_parution');
+        $article->auteur = $request->input('auteur');
+        $article->editeur = $request->input('editeur');
+        $article->distrbuteur = $request->input('distributeur');
+        $article->diffuseur = $request->input('diffuseur');
+        $article->secteur_livre = $request->input('secteur');
+        $article->rayon_livre = $request->input('cat');
+        $article->bon_achat = $request->input('bon_achat');
+        $article->repas = $request->input('repas');
+        $article->boisson = $request->input('boisson');
+        $article->dessert_divers = $request->input('dessert_divers');
+        $article->prix_achat = $request->input('prix_achat');
+        $article->remise_achat = $request->input('remise_achat');
+        $article->taux_tva = $request->input('taux_tva');
+        $article->prix_ht = $request->input('prix_ht');
+        $article->prix_ttc = $request->input('prix_ttc');
+        $article->qt_dispo_fournisseur = $request->input('qt_dispo_fournisseur');
+        $article->qt_stock = $request->input('qt_stock');
+        $article->qt_depot = $request->input('qt_depot');
+        $article->qt_reservation = $request->input('qt_reservation');
+        $article->qt_commande_fournisseur = $request->input('qt_commande_fournisseur');
+        $article->save();
+        
+        return redirect('article/show')->with('success', 'Votre article a bien été modifié');
+
     }
 
 
@@ -141,9 +166,13 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
+        // article::where('id_article', $id)->delete();
+
         $article = article::find($id);
         $article->delete();
+        // article::destroy($id);
 
-        return redirect('resultArticle')->with('succes', 'Article supprimé');
+
+        return redirect('article')->with('succes', 'Article supprimé');
     }
 }

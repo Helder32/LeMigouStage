@@ -97,9 +97,9 @@
                     </td>
 
                     <td>
-                        <form action="{{ route('article.destroy', [$article->id])}}" method="post">
-                            @csrf
+                        <form action="{{ route('article.destroy', [$article->id_article])}}" method="post">
                             @method('DELETE')
+                            @csrf
                             <button class="btn btn-danger" type="submit">Supprimer</button>
                         </form>
                     </td>

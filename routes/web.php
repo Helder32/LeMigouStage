@@ -17,7 +17,6 @@
 
 Auth::routes();
 
-
 Route::get('/', 'BodyController@index')->name('body');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -37,8 +36,8 @@ Route::get('/article/create', 'ArticleController@create')->name('article.create'
 Route::post('article', 'ArticleController@store');
 Route::get('/article/show', 'ArticleController@show')->name('resultArticle');
 Route::get('/article/edit/{id}', 'ArticleController@edit')->name('article.edit');
-Route::get('/article/update', 'ArticleController@update')->name('article.update');
-Route::get('/article/destroy', 'ArticleController@destroy')->name('article.destroy');
+Route::post('/article/update/{id}', 'ArticleController@update')->name('article.update');
+Route::delete('/article/destroy/{id}', 'ArticleController@destroy')->name('article.destroy');
 
 
 Route::get('/venteLib', 'venteLibController@index')->name('venteLib');

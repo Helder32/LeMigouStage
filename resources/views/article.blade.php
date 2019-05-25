@@ -26,7 +26,7 @@
             <div id="newArticle" class="modal">
                 <form class="modal-content col-sm-7" action="{{url("article")}}" id="newArt" method="post">
                     {{ csrf_field() }}
-
+                    {{-- @method('DELETE') --}}
                     <span onclick="document.getElementById('newArticle').style.display='none'" class="close" title="Close Modal">&times;</span>
 
                     <div class="container">
