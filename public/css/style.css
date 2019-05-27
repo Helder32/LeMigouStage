@@ -57,6 +57,21 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#registerBody {
+    /* The image used */
+    /* background-image: url("../svg/yogi-purnama-1075862-unsplash.jpg"); */
+    background-color: #08131f;
+
+    /* Full height */
+    height: 100%;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 90% 65%;
+}
 .sidenav {
     height: 100%;
     width: 0;
@@ -452,6 +467,11 @@ hr {
     color: rgb(14, 13, 24);
 }
 
+#RetourRegister, #RetourLogin {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
 
 #footer {
     position: fixed;
@@ -461,10 +481,15 @@ hr {
 }
 
 
-#footerClients {
+#footerClients, #footerRegister {
     position: fixed;
     bottom: 0;
     left: 0; 
     right: 0;
     color: white;
+}
+
+#newUtil {
+    color: rgb(0, 250, 96);
+
 }

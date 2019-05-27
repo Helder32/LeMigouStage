@@ -6,6 +6,9 @@
 
 <body id="registerBody">
 
+    <!-- Pour revenir à la page précedente -->
+    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="RetourRegister" >Retour</a> 
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -80,5 +83,13 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Footer --> 
+        <footer class="page-footer font-small special-color-dark pt-4" id="footerRegister" >
+    
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright: * HelDev *</div>
+            
+        </footer>
     </body>
 @endsection

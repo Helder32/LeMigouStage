@@ -2,6 +2,11 @@
 
 @section('content')
 <body id="connectBody">
+
+    <!-- Pour revenir à la page précedente -->
+    <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="RetourLogin" >Retour</a>
+
+
     <div class="container">
                     <p id="titlePage" class="text-center"></p>    
         <div class="row justify-content-center">

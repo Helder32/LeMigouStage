@@ -36,6 +36,7 @@
             
             @endif
             
+        <a class="nav-link" id="newUtil" href="{{ route('register') }}">{{ __('Créer un nouvel utilisateur') }}</a><br>
 
         <a href="{{ route('body') }}">{{ __('Accueil') }}</a>
         
@@ -69,7 +70,7 @@
             <a href="{{ route('customer') }}">{{ __('Gestion des fiches clients') }}</a>
             
             <a href="{{ route('article') }}">{{ __('Gestion des articles') }}</a>
-                                
+
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
                 aria-expanded="false">Gestion des commandes</a>
@@ -102,7 +103,6 @@
         <a href="#">Tableau de bord</a>
         <a href="#">Rechercher un titre</a>
         
-        <a class="nav-link" href="{{ route('register') }}">{{ __('Créer un nouvel utilisateur') }}</a>
 
         
     

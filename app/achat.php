@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Controller;
 use App\article;
-use App\achat;
+//use App\achat;
 use App\achat_article;
 
 
