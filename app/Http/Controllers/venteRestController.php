@@ -48,10 +48,7 @@ class venteRestController extends Controller
         $achat->date_jour = $request->input('date_jour');      
         $achat->save();
         
-        
-        // die( " " . $achat->id );
-        
-        // $achats= achat::orderby('created_at', 'desc')->first();
+                
         $article= $request->input('nomArticle');
 
         $achat_article = new achat_article;

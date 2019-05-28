@@ -5354,6 +5354,9 @@ a.badge-dark:focus {
   color: #1d643b;
   background-color: #d7f3e3;
   border-color: #c7eed8;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .alert-success hr {

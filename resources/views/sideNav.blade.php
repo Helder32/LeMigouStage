@@ -32,6 +32,7 @@
             </li>
 
             @else
+            
             <a id="content">Vous n'êtes pas connecté(e)</a>
             
             @endif
@@ -40,36 +41,13 @@
 
         <a href="{{ route('body') }}">{{ __('Accueil') }}</a>
         
-        {{-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
-                aria-expanded="false">Vente librairie</a>
-                <div class="dropdown-menu dropdown-dark" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Ticket de caisse</a>
-                    <a class="dropdown-item" href="#">Facture comptant</a>
-                    <a class="dropdown-item" href="#">Bon de livraison</a>
-                    <a class="dropdown-item" href="#">Facture différée</a>
-                    <a class="dropdown-item" href="#">Devis</a>
-                </div>
-        </li> --}}
-        
-        {{-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
-                aria-expanded="false">Vente restauration</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Repas</a>
-                    <a class="dropdown-item" href="#">Boissons</a>
-                    <a class="dropdown-item" href="#">Desserts et divers</a>
-                    <a class="dropdown-item" href="#">Menu complet</a>
-                </div>
-        </li> --}}
-        
-            <a href="{{ route('venteLib') }}">{{ __('Vente librairie') }}</a>
+        <a href="{{ route('venteLib') }}">{{ __('Vente librairie') }}</a>
 
-            <a href="{{ route('venteRest') }}">{{ __('Vente restauration') }}</a>
+        <a href="{{ route('venteRest') }}">{{ __('Vente restauration') }}</a>
 
-            <a href="{{ route('customer') }}">{{ __('Gestion des fiches clients') }}</a>
-            
-            <a href="{{ route('article') }}">{{ __('Gestion des articles') }}</a>
+        <a href="{{ route('customer') }}">{{ __('Gestion des fiches clients') }}</a>
+        
+        <a href="{{ route('article') }}">{{ __('Gestion des articles') }}</a>
 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
@@ -99,8 +77,8 @@
                         
         </li>
         
-
         <a href="#">Tableau de bord</a>
+
         <a href="#">Rechercher un titre</a>
         
 

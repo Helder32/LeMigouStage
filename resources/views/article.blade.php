@@ -15,19 +15,19 @@
                 <!-- Pour revenir à la page précedente -->
                 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
                 
-                <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche Librairie</button>
-                <button class="btn btn-light" onclick="document.getElementById('newArticle').style.display='block'" style="width:auto;">Créer une nouvelle fiche Restauration</button>
+                <button class="btn btn-light" onclick="document.getElementById('newArticleLib').style.display='block'" style="width:auto;">Créer une nouvelle fiche Librairie</button>
+                <button class="btn btn-light" onclick="document.getElementById('newArticleRest').style.display='block'" style="width:auto;">Créer une nouvelle fiche Restauration</button>
                 <button class="btn btn-light" onclick="window.location='{{ URL::route('resultArticle') }}'" style="width:auto;">Afficher ou Rechercher les articles</button>
             
             </div>
 
         </div>
     
-            <div id="newArticle" class="modal">
+            <div id="newArticleLib" class="modal">
                 <form class="modal-content col-sm-7" action="{{url("article")}}" id="newArt" method="post">
                     {{ csrf_field() }}
-                    {{-- @method('DELETE') --}}
-                    <span onclick="document.getElementById('newArticle').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    
+                    <span onclick="document.getElementById('newArticleLib').style.display='none'" class="close" title="Close Modal">&times;</span>
 
                     <div class="container">
                         <h1>Création d'une nouvelle fiche Librairie</h1>
@@ -77,15 +77,6 @@
                         <label for="bon_achat"><b>Bon d'achat</b></label>
                         <input type="text" placeholder="Bon d'achat" name="bon_achat">
 
-                        <label for="repas"><b>Repas</b></label>
-                        <input type="text" placeholder="Repas" name="repas">
-
-                        <label for="boisson"><b>Boisson</b></label>
-                        <input type="text" placeholder="Boisson" name="boisson">
-
-                        <label for="dessert_divers"><b>Desserts et divers</b></label>
-                        <input type="text" placeholder="Desserts et divers" name="dessert_divers">
-
                         <label for="prix_achat"><b>Prix d'achat</b></label>
                         <input type="text" placeholder="Prix d'achat" name="prix_achat">
 
@@ -118,7 +109,7 @@
 
                         
                             <div class="clearfix">
-                                <button type="button" onclick="document.getElementById('newArticle').style.display='none'" class="cancelbtn">Annuler</button>
+                                <button type="button" onclick="document.getElementById('newArticleLib').style.display='none'" class="cancelbtn">Annuler</button>
                                 <button type="submit" class="signupbtn" id="addArticle">Enregistrer</button>
                             </div>
                     </div>
@@ -126,26 +117,73 @@
             </div>
 
 
-            {{-- code pour afficher les messages de success --}}
-            {{-- <div class="col-sm-12">
 
-                @if(session()->get('success'))
-                    <div class="alert alert-success">
-                        {{ session()->get('success') }}  
+            <div id="newArticleRest" class="modal">
+                <form class="modal-content col-sm-7" action="{{url("article")}}" id="newArt" method="post">
+                    {{ csrf_field() }}
+                    {{-- @method('DELETE') --}}
+                    <span onclick="document.getElementById('newArticleRest').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                    <div class="container">
+                        <h1>Création d'une nouvelle fiche Restauration</h1>
+                        <hr>
+                        <label for="Nom"><b>Nom</b></label>
+                        <input type="text" placeholder="Nom" name="Nom">
+
+                        <label for="repas"><b>Repas</b></label>
+                        <input type="text" placeholder="Repas" name="repas">
+            
+                        <label for="boisson"><b>Boisson</b></label>
+                        <input type="text" placeholder="Boisson" name="boisson">
+            
+                        <label for="dessert_divers"><b>Desserts et divers</b></label>
+                        <input type="text" placeholder="Desserts et divers" name="dessert_divers">
+
+                        <label for="prix_achat"><b>Prix d'achat</b></label>
+                        <input type="text" placeholder="Prix d'achat" name="prix_achat">
+
+                        <label for="remise_achat"><b>Remise d'achat</b></label>
+                        <input type="text" placeholder="Remise d'achat" name="remise_achat">
+
+                        <label for="taux_tva"><b>Taux TVA</b></label>
+                        <input type="text" placeholder="Taux TVA" name="taux_tva" required>
+
+                        <label for="prix_ht"><b>Prix HT</b></label>
+                        <input type="text" placeholder="Prix HT" name="prix_ht" required>
+
+                        <label for="prix_ttc"><b>Prix TTC</b></label>
+                        <input type="text" placeholder="Prix TTC" name="prix_ttc" required>
+
+                        <label for="qt_stock"><b>Quantitée stock</b></label>
+                        <input type="text" placeholder="Quabtitée stock" name="qt_stock">
+
+                        <label for="qt_commande_fournisseur"><b>Quantitée en commande fournisseur</b></label>
+                        <input type="text" placeholder="Quantitée en commande fournisseur" name="qt_commande_fournisseur">
+
+                        
+                            <div class="clearfix">
+                                <button type="button" onclick="document.getElementById('newArticleRest').style.display='none'" class="cancelbtn">Annuler</button>
+                                <button type="submit" class="signupbtn" id="addArticle">Enregistrer</button>
+                            </div>
                     </div>
-                @endif
-            </div> --}}
+                </form>
+            </div>
+            
 
 
-            
-            
-            {{-- code pour afficher les messages d'erreur  --}}
+            {{-- code pour afficher les messages d'erreur  --}}                    
     
-            {{-- @if(count($errors) > 0)
+            @if(count($errors) > 0)
 
                 @foreach($errors->all() as $error)
+                
                     <div class="alert alert-danger">
                         {{$error}}
+
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+            
                     </div>
                 @endforeach
             @endif
@@ -153,14 +191,22 @@
             @if(session('success'))
                 <div class="alert alert-success">
                     {{session('success')}}
+
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            
                 </div>
             @endif
             
             @if(session('success'))
                 <div class="alert alert-error">
                     {{session('error')}}
+    
                 </div>
-            @endif  --}}
+            @endif 
+
+            
 
             <!-- Footer --> 
         <footer class="page-footer font-small special-color-dark pt-4" id="footerClients" >

@@ -22,7 +22,7 @@
     </div>
     
     <div class="listArticle_container">
-        {{-- <table class="table table-sm table-dark table-striped" id="customerTable" cellspacing="0" width="90%"> --}}
+        
         <table id="articleTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <label for="articleTable">Rechercher un article par son nom :</label>
         <input type="text" id="searchArt" onkeyup="searchArticle()" placeholder="Nom de l'article" onfocus="this.value=''">
