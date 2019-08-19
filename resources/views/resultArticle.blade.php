@@ -64,6 +64,7 @@
                 @foreach($article as $article)
                 
                 <tr>
+                    
                     <td> {{ $article->id_article }} </td>
                     <td> {{ $article->created_at }} </td>
                     <td> {{ $article->nom }} </td>
@@ -74,8 +75,9 @@
                     <td> {{ $article->editeur }} </td>
                     <td> {{ $article->distributeur }} </td>
                     <td> {{ $article->diffuseur }} </td>
-                    <td>Secteur : {{ $article->secteur_livre }}<br> 
-                        Catégorie : {{ $article->rayon_livre}} 
+                    <td> 
+                        <b>Secteur :</b> {{ $article->secteur_livre }}<br> 
+                        <b>Catégorie :</b> {{ $article->rayon_livre}} 
                     </td>
                     <td> {{ $article->bon_achat }} </td>
                     <td> {{ $article->repas }} </td>

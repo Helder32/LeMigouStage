@@ -61,6 +61,8 @@ Vos clients
                     <td> {{ $client->mail }} </td>
                     <td> {{ $client->tel_fixe }} </td>
                     <td> {{ $client->tel_mobile }} </td>
+
+                    
                 </tr>
                 
                 @endforeach
