@@ -23,12 +23,12 @@ Vos clients
     
     <div class="listCustom_container">
         {{-- <table class="table table-sm table-dark table-striped" id="customerTable" cellspacing="0" width="90%"> --}}
-        <table id="customerTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <table id="customerTable" class="table-wrapper-scroll-y my-custom-scrollbar table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <label for="searchCust">Rechercher un client par son nom :</label>
         <input type="text" id="searchCust" name="searchCustom" onkeyup="searchCustomer()" placeholder="Nom du client" onfocus="this.value=''">
             
             <thead>
-                <tr>
+                <tr id="trTable">
                     <th class="th-sm">id.</th>
                     <th class="th-sm">Date de création</th>
                     <th class="th-sm">Nom</th>
@@ -55,7 +55,7 @@ Vos clients
                     <td> {{ $client->nom }} </td>
                     <td> {{ $client->prenom }} </td>
                     <td> {{ $client->raison_sociale }} </td>
-                    <td> {{ $client->numero_rue. ' '.$client->rue. ' '. $client->code_postal. ' '. $client->ville  }} </td>
+                    <td> {{ $client->numero_rue. ' '.$client->rue. ', '. $client->code_postal. ' '. $client->ville  }} </td>
                     <td> {{ $client->age }} </td>
                     <td> {{ $client->sexe }} </td>
                     <td> {{ $client->mail }} </td>

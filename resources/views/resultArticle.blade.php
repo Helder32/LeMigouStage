@@ -23,7 +23,7 @@
     
     <div class="listArticle_container">
         
-        <table id="articleTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <table id="articleTable" class="table-wrapper-scroll-y my-custom-scrollbar table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <label for="articleTable">Rechercher un article par son nom :</label>
         <input type="text" id="searchArt" onkeyup="searchArticle()" placeholder="Nom de l'article" onfocus="this.value=''">
             
@@ -54,6 +54,9 @@
                     <th class="th-sm">Qt en dépôt</th>
                     <th class="th-sm">Qt en réservation</th>
                     <th class="th-sm">Qt en commande fournisseur</th>
+                    <th class="th-sm"></th>
+                    <th class="th-sm"></th>
+
                 </tr>
             </thead>
             
