@@ -23,51 +23,62 @@
         </div>
 
         <div id="newCustomer" class="modal">
-            <form class="modal-content col-sm-7" action="{{url("customer")}}" id="newCust" method="post">
+            <form class="modal-content col-sm-4" action="{{url("customer")}}" id="newCust" method="post" autocomplete="off">
                 {{ csrf_field() }}
 
                 <span onclick="document.getElementById('newCustomer').style.display='none'" class="close" title="Close Modal">&times;</span>
 
                 <div class="container">
-                    <h1>Création d'une nouvelle fiche client</h1>
+                    <h1 id="newCustTitle">Création d'une nouvelle fiche client</h1>
                     <hr>
+
                     <label for="Nom"><b>Nom</b></label>
                     <input type="text" placeholder="Nom" name="Nom" required>
+                    <hr>
 
                     <label for="Prenom"><b>Prénom</b></label>
                     <input type="text" placeholder="Prénom" name="Prenom" required>
+                    <hr>
 
                     <label for="raison_sociale"><b>Raison sociale</b></label>
                     <input type="text" placeholder="Raison sociale" name="raison_sociale">
+                    <hr>
 
                     <label for="Nrue"><b>N° de rue</b></label>
                     <input type="text" placeholder="N° de rue" name="Nrue">
+                    <hr>
 
                     <label for="rue"><b>Nom de rue</b></label>
                     <input type="text" placeholder="Nom de rue" name="rue">
+                    <hr>
 
                     <label for="ville"><b>Ville</b></label>
                     <input type="text" placeholder="Ville" name="ville">
+                    <hr>
 
                     <label for="code_postal"><b>Code postal</b></label>
                     <input type="text" placeholder="Code postal" name="code_postal">
+                    <hr>
 
-                    <label for="age"><b>Age</b></label>
-                    <input type="text" placeholder="Age" name="age">
+                    <label for="age"><b>Age</b></label><br>
+                    <input type="number" placeholder="Age" name="age">
+                    <hr>
 
                     <label for="sexe"><b>Genre</b></label><br>
                     <input type="radio" name="gender" value="male"> Masculin<br>
                     <input type="radio" name="gender" value="female"> Feminin<br>
+                    <hr>
 
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Email" name="email">
+                    <label for="email"><b>Email</b></label><br>
+                    <input type="email" placeholder="Email" name="email">
+                    <hr>
 
-                    <label for="telFix"><b>Téléphone fixe</b></label>
-                    <input type="text" placeholder="Téléphone fixe" name="telFix">
+                    <label for="telFix"><b>Téléphone fixe</b></label><br>
+                    <input type="tel" placeholder="Téléphone fixe" name="telFix" pattern="[0-9]{10}">
+                    <hr>
 
-                    <label for="mobile"><b>Téléphone mobile</b></label>
-                    <input type="text" placeholder="Téléphone mobile" name="mobile">
-
+                    <label for="mobile"><b>Téléphone mobile</b></label><br>
+                    <input type="tel" placeholder="Téléphone mobile" name="mobile" pattern="[0-9]{10}">
                     
                     
                     <div class="clearfix">
@@ -132,6 +143,7 @@
             </div>
         @endif 
 
+        
         <!-- Footer --> 
         <footer class="page-footer font-small special-color-dark pt-4" id="footerClients" >
     

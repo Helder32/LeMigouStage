@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.2"
     },
     "dependencies": {
-        "jshint": "^2.10.2"
+        "jshint": "^2.10.2",
+        "mdbootstrap": "^4.8.8"
     }
 }

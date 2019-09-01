@@ -61,7 +61,8 @@ class CustomerController extends Controller
         $client->save();
             
 
-        return redirect('customer')->with(['success', 'Votre demande a bien été enregistrée']);
+        return back()->withInput();
+        // return redirect('customer')->with(['success', 'Votre demande a bien été enregistrée']);
         
     }
 

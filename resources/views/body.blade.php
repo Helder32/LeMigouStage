@@ -29,16 +29,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-    
-    
-        {{-- <!-- Code pour le ruban titre -->
-        <div id="fond"> 
-            <div class="ruban">     
-                <h2>MigouLib</h2>     
-            </div>     
-            <div class="ruban_gauche"></div>
-            <div class="ruban_droit"></div>
-        </div> --}}
         
         
         <!-- Footer --> 

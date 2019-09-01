@@ -19,7 +19,7 @@
         </div>
     
             <div id="newArticle">
-                <form class="modal-content col-sm-7" action="{{url("/article/update", [$article->id_article])}}" id="newArt" method="post">
+                <form class="modal-content col-sm-4" action="{{url("/article/update", [$article->id_article])}}" id="newArt" method="post">
                     {{ csrf_field() }}
 
                     <span onclick="document.getElementById('newArticle').style.display='none'" class="close" title="Close Modal">&times;</span>

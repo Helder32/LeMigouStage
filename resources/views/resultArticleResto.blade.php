@@ -1,0 +1,104 @@
+@extends('template')
+
+@section('title')
+    Articles Restauration
+@endsection
+
+@section('content')
+
+
+<body id="resultArticleBody">
+    
+        <div>
+            @include('sideNav')
+
+            <!-- Pour revenir à la page précedente -->
+            <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
+            
+        </div>
+
+    <div>
+        <h4 id="title_table">Vos articles </h4>
+    </div>
+    
+    <div class="listArticle_container">
+        
+        <table id="articleTable" class="table-wrapper-scroll-y my-custom-scrollbar table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <label for="articleTable">Rechercher un article par son nom :</label>
+        <input type="text" id="searchArt" onkeyup="searchArticle()" placeholder="Nom de l'article" onfocus="this.value=''">
+            
+            <thead>
+                <tr id="trTable">
+                    <th class="th-sm">id.</th>
+                    <th class="th-sm">Date de création</th>
+                    <th class="th-sm">Nom</th>
+                    <th class="th-sm">Repas</th>
+                    <th class="th-sm">Boisson</th>
+                    <th class="th-sm">Dessert et divers</th>
+                    <th class="th-sm">Prix d'achat</th>
+                    <th class="th-sm">Remise</th>
+                    <th class="th-sm">Taux de TVA</th>
+                    <th class="th-sm">Prix HT</th>
+                    <th class="th-sm">Prix TTC</th>
+                    <th class="th-sm">Qt dispo. fournisseur</th>
+                    <th class="th-sm">Qt en stock</th>
+                    <th class="th-sm">Qt en commande fournisseur</th>
+                    <th class="th-sm"></th>
+                    <th class="th-sm"></th>
+
+                </tr>
+            </thead>
+            
+            <tbody>
+                
+                @if(count($article) > 0)
+                
+                @foreach($article as $article)
+                
+                <tr>
+                    
+                    <td> {{ $article->id_article }} </td>
+                    <td> {{ $article->created_at }} </td>
+                    <td> {{ $article->nom }} </td>
+                    <td> {{ $article->repas }} </td>
+                    <td> {{ $article->boisson }} </td>
+                    <td> {{ $article->dessert_divers }} </td>
+                    <td> {{ $article->prix_achat }} </td>
+                    <td> {{ $article->remise_achat }} </td>
+                    <td> {{ $article->taux_tva }} </td>
+                    <td> {{ $article->prix_ht }} </td>
+                    <td> {{ $article->prix_ttc }} </td>
+                    <td> {{ $article->qt_dispo_fournisseur }} </td>
+                    <td> {{ $article->qt_stock }} </td>
+                    <td> {{ $article->qt_commande_fournisseur }} </td>
+                    
+                    <td>
+                        <a href="{{ route('article.edit', [$article->id_article])}}" class="btn btn-primary">Éditer</a>
+                    </td>
+
+                    <td>
+                        <form action="{{ route('article.destroy', [$article->id_article])}}" method="post">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn btn-danger" type="submit">Supprimer</button>
+                        </form>
+                    </td>
+
+                </tr>
+                
+                @endforeach
+                
+                @else
+                    <p id='alertArt'>Vous n'avez pas d'articles enregistrés</p>
+                @endif 
+                
+            
+            </tbody>
+        </table> 
+    </div>
+        
+
+    
+</body>
+
+@endsection
