@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\clients;
 
 class TemplateController extends Controller
 {

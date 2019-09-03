@@ -45,3 +45,5 @@ Route::get('/venteRest', 'venteRestController@index')->name('venteRest');
 Route::post('/venteRest', 'venteRestController@store');
 
 
+// Route::get('/pdf/{order}', ['as' => 'order.pdf', 'uses' => 'OrderController@orderPdf']);
+Route::get('/pdf/{order}', 'PdfController@clientPdf')->name('client.pdf');

@@ -21,7 +21,7 @@
         <h4 id="title_table">Vos articles </h4>
     </div>
     
-    <div class="listArticle_container">
+    <div class="listArticle_container col-sm-11" id="listArt">
         
         <table id="articleTable" class="table-wrapper-scroll-y my-custom-scrollbar table-striped table-bordered table-sm" cellspacing="0" width="100%">
         <label for="articleTable">Rechercher un article par son nom :</label>

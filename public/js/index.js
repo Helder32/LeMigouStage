@@ -121,16 +121,16 @@ function calcule_ht_ttc(event) // fonction de calcul
     var taux_tva = $('input[class="taux_tva"]').val();
     var prix_ttc = $('input[class="prix_ttc"]').val();
     var taux_remise = $('input[class="taux_remise"]').val();
-    var total_remise = prix_ttc-(prix_ttc*(1-taux_remise/100)).toFixed(1);
+    var total_remise = prix_ttc-(prix_ttc*(1-taux_remise/100));
 
     if(event.target.name=='prix_ttc')
     {
-        var new_prix_ht = quantite*(prix_ttc/(1+taux_tva/100)).toFixed(2);		
+        var new_prix_ht = quantite*(prix_ttc/(1+taux_tva/100));		
         $('input[class="prix_ht"]').val(new_prix_ht);
     }
     else
     {
-        var new_prix_ttc = quantite*(prix_ht*(1+taux_tva/100))-total_remise.toFixed(2);		
+        var new_prix_ttc = quantite*(prix_ht*(1+taux_tva/100))-total_remise.toFixed(1);		
         $('input[class="prix_ttc"]').val(new_prix_ttc);
     }	
 }

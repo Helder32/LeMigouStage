@@ -21,11 +21,12 @@ Vos clients
         <h4 id="title_table">Vos clients </h4>
     </div>
     
-    <div class="listCustom_container">
+    <div class="listCustom_container  col-sm-10" id="tabCust">
         {{-- <table class="table table-sm table-dark table-striped" id="customerTable" cellspacing="0" width="90%"> --}}
-        <table id="customerTable" class="table-wrapper-scroll-y my-custom-scrollbar table-striped table-bordered table-sm" cellspacing="0" width="100%">
-        <label for="searchCust">Rechercher un client par son nom :</label>
-        <input type="text" id="searchCust" name="searchCustom" onkeyup="searchCustomer()" placeholder="Nom du client" onfocus="this.value=''">
+        <table id="customerTable" class="table-wrapper-scroll-y my-custom-scrollbar table-striped table-bordered table-sm" cellspacing="0" width="80%">
+            <label for="searchCust">Rechercher un client par son nom :</label>
+            <input type="text" id="searchCust" name="searchCustom" onkeyup="searchCustomer()" placeholder="Nom du client" onfocus="this.value=''">
+            {{-- <a href="{{route('client.pdf', '$client')}}">Enregistrer en PDF</a> --}}
             
             <thead>
                 <tr id="trTable">
@@ -61,7 +62,6 @@ Vos clients
                     <td> {{ $client->mail }} </td>
                     <td> {{ $client->tel_fixe }} </td>
                     <td> {{ $client->tel_mobile }} </td>
-
                     
                 </tr>
                 
