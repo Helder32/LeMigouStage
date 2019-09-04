@@ -16,7 +16,7 @@
         <!-- Authentication Links -->
         @guest
         
-        <a id="connectBtn" class="link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>
+        <a id="connectBtn" class="link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>        
         
         @if (Route::has('register'))
         
@@ -24,6 +24,7 @@
         @else
         
         @endguest
+
     </div>
         
         <main class="py-4">
