@@ -14,7 +14,7 @@
                 @include('sideNav')
                 
                 <!-- Pour revenir à la page précedente -->
-                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="Retour" >Retour</a> 
+                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" id="RetourVenteRest">Retour</a> 
             </div>
             
             <div id="butCaisse" >
@@ -107,15 +107,15 @@
                     
                     <select class="browser-default custom-select mb-6" name="nomArticle" id="artSelect" >
                         <option disabled="" selected="">Nom de l'article</option>
-                        @foreach($article ->sortBy('nom') as $key)
-                        @if ($key ->repas != NULL)
-                        <option value="{{$key ->id_article}}">{{$key ->repas}}</option>
-                        @elseif ($key ->boisson != NULL)
-                        <option value="{{$key ->id_article}}">{{$key ->boisson}}</option>
-                        @elseif ($key ->dessert_divers != NULL)
-                        <option value="{{$key ->id_article}}">{{$key ->dessert_divers}}</option>
-                        @endif
-                        @endforeach
+                            @foreach($article ->sortBy('nom') as $key)
+                                @if ($key ->repas != NULL)
+                                    <option value="{{$key ->id_article}}">{{$key ->repas}}</option>
+                                        @elseif ($key ->boisson != NULL)
+                                            <option value="{{$key ->id_article}}">{{$key ->boisson}}</option>
+                                        @elseif ($key ->dessert_divers != NULL)
+                                            <option value="{{$key ->id_article}}">{{$key ->dessert_divers}}</option>
+                                @endif
+                            @endforeach
                     </select>
                     <hr>
                     

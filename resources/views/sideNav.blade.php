@@ -45,9 +45,10 @@
 
         <a href="{{ route('venteRest') }}">{{ __('Vente restauration') }}</a>
 
+        <a href="{{ route('article') }}">{{ __('Gestion des articles') }}</a>
+        
         <a href="{{ route('customer') }}">{{ __('Gestion des fiches clients') }}</a>
         
-        <a href="{{ route('article') }}">{{ __('Gestion des articles') }}</a>
 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" 
@@ -87,7 +88,7 @@
     </div>    
 
 
-    <span style="font-size:35px;cursor:pointer" onclick="openNav()">&#9776;
+    <span id="spanSidenavOpen" style="" onclick="openNav()">&#9776;
     
     
         

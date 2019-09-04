@@ -80,6 +80,23 @@ body, html {
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
+#newCustomer {
+    /* The image used */
+    background-image: url("../svg/super-heros-retraite.jpg");
+    /* filter:opacity(90%); */
+
+    /* Full height */
+    height: 100%;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
 #registerBody {
     /* The image used */
     /* background-image: url("../svg/yogi-purnama-1075862-unsplash.jpg"); */
@@ -526,8 +543,8 @@ hr {
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-#RetourRegister, #RetourLogin {
-    font-size: 30px;
+#RetourRegister, #RetourLogin, #RetourVenteRest {
+    font-size: 20px;
     color: rgb(255, 255, 255);
 }
 
@@ -571,4 +588,11 @@ hr {
 
 #tabCust, #listArt {
     margin: auto;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#spanSidenavOpen {
+    font-size:35px;
+    cursor:pointer;
 }

@@ -96,8 +96,6 @@ class ArticleController extends Controller
         return view('resultArticle')->with('article', $article);
     }
 
-
-
     /**
      * Show the form for editing the specified resource.
      *
